@@ -3,6 +3,7 @@ from PySide6.QtGui import QAction
 from PySide6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QStackedWidget, QSpacerItem, QSizePolicy, QLabel, \
     QHBoxLayout, QPushButton
 
+from junip3r.common.widgets.version_label import VersionLabel
 from junip3r.labeller.widgets.editor import Editor
 
 
@@ -19,6 +20,9 @@ class EditorMainWindowLayout(QMainWindow):
 
         self.setWindowTitle("Junip3r Labeller")
         self.resize(800, 600)
+
+        version_label = VersionLabel(self)
+        self.statusBar().addPermanentWidget(version_label)
 
         menu_bar = self.menuBar()
 

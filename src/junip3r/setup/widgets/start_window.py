@@ -10,11 +10,13 @@ from PySide6.QtWidgets import (
     QListWidget,
     QListWidgetItem,
     QVBoxLayout,
-    QWidget,
+    QWidget, QMainWindow,
 )
 
+from junip3r.common.widgets.version_label import VersionLabel
 
-class StartWindow(QWidget):
+
+class StartWindow(QMainWindow):
     new_project_requested = Signal()
     open_project_requested = Signal(str)
 
@@ -25,7 +27,13 @@ class StartWindow(QWidget):
         self.resize(720, 520)
         self.setMinimumSize(560, 420)
 
-        outer_layout = QVBoxLayout(self)
+        version_label = VersionLabel(self)
+        self.statusBar().addPermanentWidget(version_label)
+
+        self.central_widget = QWidget(self)
+        self.setCentralWidget(self.central_widget)
+
+        outer_layout = QVBoxLayout(self.central_widget)
         outer_layout.setContentsMargins(32, 32, 32, 32)
 
         # Stretching above and below keeps the panel vertically centered.

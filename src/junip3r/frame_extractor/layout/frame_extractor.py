@@ -3,6 +3,7 @@ from PySide6.QtGui import QAction
 from PySide6.QtWidgets import (QFrame, QHBoxLayout, QLabel, QLayout,
                                QMainWindow, QMenu, QMenuBar, QPushButton, QSplitter, QStatusBar, QVBoxLayout, QWidget)
 
+from junip3r.common.widgets.version_label import VersionLabel
 from junip3r.frame_extractor.widgets.extraction_controls import ExtractionControls
 from junip3r.frame_extractor.widgets.frame_list import FrameList
 from junip3r.frame_extractor.widgets.selection_controls import SelectionControls
@@ -38,6 +39,9 @@ class FrameExtractorLayout(QMainWindow):
         self.action_open_setup = QAction("Open Project Setup", self)
         self.action_open_labeller = QAction("Open Labeller", self)
 
+        version_label = VersionLabel(self)
+        self.statusBar().addPermanentWidget(version_label)
+
         central_widget = QWidget(self)
         horizontal_layout = QHBoxLayout(central_widget)
 
@@ -58,9 +62,6 @@ class FrameExtractorLayout(QMainWindow):
         self.menu_window = self.menubar.addMenu("Window")
         self.menu_window.addAction(self.action_open_setup)
         self.menu_window.addAction(self.action_open_labeller)
-
-        self.statusbar = QStatusBar(self)
-        self.setStatusBar(self.statusbar)
 
     def _build_video_pane(self, parent: QWidget) -> QFrame:
         frame = QFrame(parent)

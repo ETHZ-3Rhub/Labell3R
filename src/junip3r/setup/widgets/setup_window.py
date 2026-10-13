@@ -8,6 +8,7 @@ from PySide6.QtWidgets import QMainWindow, QFrame, QVBoxLayout, QWidget, QSplitt
     QFileDialog, QMessageBox, QInputDialog
 
 from junip3r.common.config.abc import ConfigMode
+from junip3r.common.widgets.version_label import VersionLabel
 from junip3r.labeller.config.data import InstanceType
 from junip3r.labeller.config.parser import InstanceTypeResolver
 from junip3r.labeller.data.repository.selection import SelectionRepository
@@ -51,6 +52,9 @@ class SetupMainWindow(QMainWindow):
         self._project_folder: Optional[Path] = None
 
         self.setWindowTitle("Junip3R Project Setup")
+
+        version_label = VersionLabel(self)
+        self.statusBar().addPermanentWidget(version_label)
 
         menu_bar = self.menuBar()
 

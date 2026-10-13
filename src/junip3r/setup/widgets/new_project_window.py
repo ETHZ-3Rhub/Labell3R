@@ -11,10 +11,11 @@ from PySide6.QtCore import Qt, QAbstractListModel, Signal
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QVBoxLayout, QFormLayout, QLineEdit, QToolButton, QWidgetAction, \
     QSizePolicy, QHBoxLayout, QListView, QLabel, QFrame, QDialogButtonBox, QComboBox, \
-    QStackedWidget, QWidget, QMessageBox, QPushButton
+    QStackedWidget, QWidget, QMessageBox, QPushButton, QMainWindow
 
 from junip3r.common.config.abc import ConfigMode
 from junip3r.common.labels.serialization import LabelSerializer
+from junip3r.common.widgets.version_label import VersionLabel
 from junip3r.labeller.config.parser import parse_config
 from junip3r.labeller.data.repository.label import InstanceMapper
 from junip3r.labeller.config.data import InstanceType
@@ -155,7 +156,7 @@ class InstanceTypeModel(QAbstractListModel):
         return None
 
 
-class NewProjectWindow(QWidget):
+class NewProjectWindow(QMainWindow):
     setup_requested = Signal(str)
     open_project_requested = Signal(str)
 
@@ -170,7 +171,12 @@ class NewProjectWindow(QWidget):
         # Default location user home
         location = str(Path.home() / "LabellingProject")
 
-        layout = QVBoxLayout(self)
+        version_label = VersionLabel(self)
+        self.statusBar().addPermanentWidget(version_label)
+
+        central_widget = QWidget()
+        layout = QVBoxLayout(central_widget)
+        self.setCentralWidget(central_widget)
 
         content_layout = QHBoxLayout()
 

@@ -1,4 +1,4 @@
-from junip3r.labeller.controller.geometry import clamp_to_image01, is_inside_image01
+from labell3r.labeller.controller.geometry import clamp_to_image01, is_inside_image01
 
 
 # --- is_inside_image01 ------------------------------------------------------------

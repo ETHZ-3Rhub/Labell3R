@@ -1,6 +1,6 @@
 import pytest
 
-from junip3r.common.tags.serialization import TagSerializer
+from labell3r.common.tags.serialization import TagSerializer
 
 
 def test_write_then_load_round_trips_string_and_boolean_values(tmp_path):

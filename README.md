@@ -1,11 +1,11 @@
-# Junip3R
+# Labell3R
 
-Junip3R is a desktop GUI for labelling pose-estimation and object-detection data:
+Labell3R is a desktop GUI for labelling pose-estimation and object-detection data:
 bounding boxes, keypoints, polygons, and polylines, with YOLO detect/pose dataset
 export. It also extracts labelled frames from video and manages project setup and
 configuration, all from one application.
 
-Full documentation: https://ethz-3rhub.github.io/Junip3R
+Full documentation: https://ethz-3rhub.github.io/Labell3R
 
 ## Features
 
@@ -25,14 +25,14 @@ walkthrough.
 
 **Portable executable (Windows, no Python required):** download the latest
 release from the
-[Releases page](https://github.com/ETHZ-3Rhub/Junip3R/releases/latest), extract
-the ZIP, and run `Junip3R.exe`.
+[Releases page](https://github.com/ETHZ-3Rhub/Labell3R/releases/latest), extract
+the ZIP, and run `Labell3R.exe`.
 
 **As a Python package** (Python 3.10+):
 
 ```bash
-python -m pip install "git+https://github.com/ETHZ-3Rhub/Junip3R.git"
-junip3r
+python -m pip install "git+https://github.com/ETHZ-3Rhub/Labell3R.git"
+labell3r
 ```
 
 See the [Installation guide](docs/User%20Guide/Installation.md) for details,
@@ -57,6 +57,6 @@ See `CLAUDE.md` for an overview of the codebase's architecture.
 
 ## License
 
-Junip3R is licensed under the [GNU AGPLv3](LICENSE) or later. It uses PySide6
+Labell3R is licensed under the [GNU AGPLv3](LICENSE) or later. It uses PySide6
 (LGPLv3) and other third-party packages; see [`licenses/`](licenses/) for their
 license notices.

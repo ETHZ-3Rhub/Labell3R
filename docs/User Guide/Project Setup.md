@@ -5,9 +5,9 @@ first time you create a new project. This page covers that flow. If you'd rather
 `config.yaml` by hand, see [Editing config.yaml manually](#editing-configyaml-manually)
 at the end of this page.
 
-## Starting Junip3R
+## Starting Labell3R
 
-When you launch Junip3R you land on a welcome screen with two choices:
+When you launch Labell3R you land on a welcome screen with two choices:
 
 - **Create a new project** - opens the New Project window (below).
 - **Open an existing project** - opens a file picker to select an existing project's
@@ -30,12 +30,12 @@ When you launch Junip3R you land on a welcome screen with two choices:
 
 ## Modes
 
-Junip3R supports three labelling modes, chosen once per project in the New Project
+Labell3R supports three labelling modes, chosen once per project in the New Project
 window:
 
 - **YOLO Pose Estimation** (`yolo_pose`) - keypoints per instance type, each with an
   optional skeleton for visualization, plus an optional bounding box (manual or
-  computed automatically from the placed keypoints). This is the primary mode Junip3R
+  computed automatically from the placed keypoints). This is the primary mode Labell3R
   is built around, and the rest of this User Guide (Quick Start, Labelling Workflow)
   focuses on it.
 - **YOLO Object Detection** (`yolo_detect`) - bounding boxes only, no keypoints. Each

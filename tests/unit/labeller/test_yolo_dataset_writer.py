@@ -2,8 +2,8 @@ from pathlib import Path
 
 import yaml
 
-from junip3r.labeller.export.yolo.data import YoloDataset
-from junip3r.labeller.export.yolo.serialization.yolo_dataset_writer import YoloDatasetWriter
+from labell3r.labeller.export.yolo.data import YoloDataset
+from labell3r.labeller.export.yolo.serialization.yolo_dataset_writer import YoloDatasetWriter
 
 
 def _write_data_yaml(tmp_path: Path, num_keypoints: int, kpt_names=None) -> dict:

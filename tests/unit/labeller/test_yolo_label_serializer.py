@@ -1,8 +1,8 @@
 import pytest
 
-from junip3r.labeller.yolo.labels.data import YoloBoxInstance, YoloSegmentInstance
-from junip3r.labeller.yolo.labels.segment_serializer import YoloSegmentLabelSerializer
-from junip3r.labeller.yolo.labels.serializer import YoloLabelSerializer
+from labell3r.labeller.yolo.labels.data import YoloBoxInstance, YoloSegmentInstance
+from labell3r.labeller.yolo.labels.segment_serializer import YoloSegmentLabelSerializer
+from labell3r.labeller.yolo.labels.serializer import YoloLabelSerializer
 
 
 def test_rejects_invalid_keypoint_dims():

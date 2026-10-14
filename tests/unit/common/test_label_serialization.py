@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from junip3r.common.labels.data import BoundingBox, Instance, Keypoint, Polygon, Polyline
-from junip3r.common.labels.serialization import LabelSerializer
+from labell3r.common.labels.data import BoundingBox, Instance, Keypoint, Polygon, Polyline
+from labell3r.common.labels.serialization import LabelSerializer
 
 
 def test_round_trip_preserves_all_member_types(tmp_path: Path):

@@ -3,12 +3,12 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from junip3r.common.labels.data import Instance as DataInstance, Keypoint as DataKeypoint, \
+from labell3r.common.labels.data import Instance as DataInstance, Keypoint as DataKeypoint, \
     BoundingBox as DataBoundingBox
-from junip3r.labeller.data.repository.context import ContextRepository
-from junip3r.labeller.data.repository.image import ImageRepository
-from junip3r.labeller.data.repository.label import JuniperLabelRepository
-from junip3r.labeller.data.repository.tag import TagRepository
+from labell3r.labeller.data.repository.context import ContextRepository
+from labell3r.labeller.data.repository.image import ImageRepository
+from labell3r.labeller.data.repository.label import LabellerLabelRepository
+from labell3r.labeller.data.repository.tag import TagRepository
 
 
 # --- ImageRepository -----------------------------------------------------------------
@@ -80,7 +80,7 @@ def test_context_repository_returns_none_when_file_missing(tmp_path: Path):
     assert repository.get_context(0) is None
 
 
-# --- JuniperLabelRepository (type-unaware DTO I/O; type resolution is LabelModel's job,
+# --- LabellerLabelRepository (type-unaware DTO I/O; type resolution is LabelModel's job,
 # see test_label_model.py) -------------------------------------------------------------
 
 def test_label_repository_round_trips_dto_instances(tmp_path: Path):
@@ -95,7 +95,7 @@ def test_label_repository_round_trips_dto_instances(tmp_path: Path):
     )
 
     label_file = tmp_path / "a.json"
-    repository = JuniperLabelRepository([label_file])
+    repository = LabellerLabelRepository([label_file])
 
     repository.set_instances(0, [instance])
     loaded = repository.get_instances(0)
@@ -108,7 +108,7 @@ def test_label_repository_round_trips_dto_instances(tmp_path: Path):
 
 
 def test_label_repository_get_instances_on_missing_file_returns_empty(tmp_path: Path):
-    repository = JuniperLabelRepository([tmp_path / "missing.json"])
+    repository = LabellerLabelRepository([tmp_path / "missing.json"])
 
     assert repository.get_instances(0) == []
 

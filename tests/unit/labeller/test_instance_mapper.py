@@ -1,9 +1,9 @@
 import pytest
 
-from junip3r.common.labels.data import Instance, Keypoint, BoundingBox, Polygon
-from junip3r.labeller.config.data import InstanceType, MemberType, SkeletonType
-from junip3r.labeller.data.repository.label import InstanceMapper
-from junip3r.labeller.data.types.abc import LabellerObjectType
+from labell3r.common.labels.data import Instance, Keypoint, BoundingBox, Polygon
+from labell3r.labeller.config.data import InstanceType, MemberType, SkeletonType
+from labell3r.labeller.data.repository.label import InstanceMapper
+from labell3r.labeller.data.types.abc import LabellerObjectType
 
 
 def _instance_type(name="mouse", members=None):

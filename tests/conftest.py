@@ -1,2 +1,2 @@
-"""Shared pytest fixtures for the Junip3R test suite."""
+"""Shared pytest fixtures for the Labell3R test suite."""
 

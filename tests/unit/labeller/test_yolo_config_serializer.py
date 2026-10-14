@@ -1,7 +1,7 @@
 import pytest
 
-from junip3r.labeller.yolo.data_yaml.data import YoloDataYaml
-from junip3r.labeller.yolo.data_yaml.serializer import YoloDataYamlSerializer
+from labell3r.labeller.yolo.data_yaml.data import YoloDataYaml
+from labell3r.labeller.yolo.data_yaml.serializer import YoloDataYamlSerializer
 
 
 def _minimal_config(**overrides):

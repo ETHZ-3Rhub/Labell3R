@@ -1,7 +1,7 @@
 import pytest
 
-from junip3r.labeller.export.yolo.data import ExportMode
-from junip3r.labeller.export.yolo.export_profile import ExportProfile, ExportProfileRepository, ExportProfileSerializer
+from labell3r.labeller.export.yolo.data import ExportMode
+from labell3r.labeller.export.yolo.export_profile import ExportProfile, ExportProfileRepository, ExportProfileSerializer
 
 
 # --- ExportProfileSerializer -----------------------------------------------------------

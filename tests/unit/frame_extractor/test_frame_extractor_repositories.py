@@ -2,11 +2,11 @@ from pathlib import Path
 
 import pytest
 
-from junip3r.frame_extractor.data.repository.image_repository import ImageRepository
-from junip3r.frame_extractor.data.repository.tag_repository import TagRepository
-from junip3r.frame_extractor.data.repository.video_repository import VideoRepository
-from junip3r.frame_extractor.data.types.data import Frame, Video
-from junip3r.frame_extractor.util.selection.random import sample_frames_uniform_unique
+from labell3r.frame_extractor.data.repository.image_repository import ImageRepository
+from labell3r.frame_extractor.data.repository.tag_repository import TagRepository
+from labell3r.frame_extractor.data.repository.video_repository import VideoRepository
+from labell3r.frame_extractor.data.types.data import Frame, Video
+from labell3r.frame_extractor.util.selection.random import sample_frames_uniform_unique
 
 
 # --- ImageRepository (frame CSV) -------------------------------------------------------

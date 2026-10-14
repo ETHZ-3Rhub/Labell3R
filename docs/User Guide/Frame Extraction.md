@@ -9,7 +9,7 @@ Use Frame Extractor to choose and extract frames from videos into your project.
   - Create an `images` folder next to `config.yaml`.
   - Copy image files into `images`.
 
-When you run `Junip3R` and select a `config.yaml` file, the frame extractor opens automatically if no images are found in `images`.
+When you run `Labell3R` and select a `config.yaml` file, the frame extractor opens automatically if no images are found in `images`.
 
 ## Add videos
 

@@ -1,9 +1,9 @@
 from pathlib import Path
 
-from junip3r.common.labels.serialization import LabelSerializer
-from junip3r.labeller.config.data import InstanceType, MemberType, SkeletonType
-from junip3r.labeller.data.types.abc import LabellerObjectType
-from junip3r.labeller.legacy.legacy_label_converter import LegacyLabelConverter
+from labell3r.common.labels.serialization import LabelSerializer
+from labell3r.labeller.config.data import InstanceType, MemberType, SkeletonType
+from labell3r.labeller.data.types.abc import LabellerObjectType
+from labell3r.labeller.legacy.legacy_label_converter import LegacyLabelConverter
 
 
 def test_convert_legacy_labels_writes_a_readable_v2_file(tmp_path: Path):

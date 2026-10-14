@@ -1,11 +1,11 @@
 import pytest
 
-from junip3r.common.labels.data import Instance as DataInstance, Keypoint as DataKeypoint, \
+from labell3r.common.labels.data import Instance as DataInstance, Keypoint as DataKeypoint, \
     BoundingBox as DataBoundingBox, Polygon as DataPolygon
-from junip3r.labeller.config.data import InstanceType, MemberType, SkeletonType
-from junip3r.labeller.data.types.abc import LabellerObjectType
-from junip3r.labeller.data.types.mutable import MutableKeypoint, MutableBoundingBox, MutablePolygon
-from junip3r.labeller.model.label_model import LabelModel, MutableInstanceMapper
+from labell3r.labeller.config.data import InstanceType, MemberType, SkeletonType
+from labell3r.labeller.data.types.abc import LabellerObjectType
+from labell3r.labeller.data.types.mutable import MutableKeypoint, MutableBoundingBox, MutablePolygon
+from labell3r.labeller.model.label_model import LabelModel, MutableInstanceMapper
 
 
 def _instance_type(name="mouse", members=None, color=(0, 0, 255)):

@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from junip3r.labeller.yolo.data_yaml.data import YoloDataYaml
-from junip3r.labeller.yolo.config.yolo_dataset_config import resolve_yolo_data_yaml
+from labell3r.labeller.yolo.data_yaml.data import YoloDataYaml
+from labell3r.labeller.yolo.config.yolo_dataset_config import resolve_yolo_data_yaml
 
 
 def _config(**overrides):

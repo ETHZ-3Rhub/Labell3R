@@ -1,6 +1,6 @@
 import yaml
 
-from junip3r.labeller.export.yolo.set_split import (
+from labell3r.labeller.export.yolo.set_split import (
     NamedSetSplit,
     NamedSetSplitSerializer,
     SetSplitConfig,

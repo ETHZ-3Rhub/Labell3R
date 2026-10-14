@@ -2,13 +2,13 @@ import numpy as np
 import pytest
 import yaml
 
-from junip3r.common.config.abc import ConfigMode
-from junip3r.labeller.data.yolo.config_repository import build_yolo_dataset_schema
-from junip3r.labeller.data.yolo.discovery import discover_yolo_dataset_images, yolo_dataset_root
-from junip3r.labeller.data.yolo.label_repository import parse_yolo_label_file
-from junip3r.labeller.model.app_model import AppModel
-from junip3r.labeller.model.label_model import LabelModel
-from junip3r.labeller.yolo.config.yolo_dataset_config import YoloDatasetConfig
+from labell3r.common.config.abc import ConfigMode
+from labell3r.labeller.data.yolo.config_repository import build_yolo_dataset_schema
+from labell3r.labeller.data.yolo.discovery import discover_yolo_dataset_images, yolo_dataset_root
+from labell3r.labeller.data.yolo.label_repository import parse_yolo_label_file
+from labell3r.labeller.model.app_model import AppModel
+from labell3r.labeller.model.label_model import LabelModel
+from labell3r.labeller.yolo.config.yolo_dataset_config import YoloDatasetConfig
 
 
 # --- discovery --------------------------------------------------------------------------
@@ -123,7 +123,7 @@ def test_generic_schema_uses_kpt_names_when_present(tmp_path):
     assert [m.name for m in cat.members] == ["Bounding Box", "kp_0", "kp_1"]
 
 
-# --- config_repository: rich (Junip3R-exported meta/) -------------------------------------
+# --- config_repository: rich (Labell3R-exported meta/) -------------------------------------
 
 def _write_rich_meta(dataset_root):
     instance_types_dir = dataset_root / "meta" / "instance_types"
@@ -226,7 +226,7 @@ def test_parse_yolo_label_file_skips_blank_lines_and_numbers_repeated_types(tmp_
 
 
 def test_yolo_label_repository_set_instances_is_read_only(tmp_path):
-    from junip3r.labeller.data.yolo.label_repository import YoloLabelRepository
+    from labell3r.labeller.data.yolo.label_repository import YoloLabelRepository
 
     config = _dataset_config(names={0: "mouse"})
     schema = build_yolo_dataset_schema(tmp_path, config)
@@ -271,8 +271,8 @@ class _FakeSelectionRepository:
 
 
 def test_yolo_repositories_produce_resolved_instances_through_app_model(tmp_path):
-    from junip3r.labeller.data.yolo.config_repository import YoloConfigRepository
-    from junip3r.labeller.data.yolo.label_repository import YoloLabelRepository
+    from labell3r.labeller.data.yolo.config_repository import YoloConfigRepository
+    from labell3r.labeller.data.yolo.label_repository import YoloLabelRepository
 
     config = _dataset_config(names={0: "mouse"}, kpt_shape=[1, 3])
     schema = build_yolo_dataset_schema(tmp_path, config)
@@ -296,9 +296,9 @@ def test_selection_survives_repeated_image_state_recomputation(tmp_path):
     # selects the first instance off one get_instances() call, then get_selected_instance
     # re-resolves it off a second, independent call - if YoloLabelRepository generated a
     # fresh id each parse, this lookup would silently return None (empty member list).
-    from junip3r.labeller.data.yolo.config_repository import YoloConfigRepository
-    from junip3r.labeller.data.yolo.label_repository import YoloLabelRepository
-    from junip3r.labeller.model.pose_image_model import PoseImageModel
+    from labell3r.labeller.data.yolo.config_repository import YoloConfigRepository
+    from labell3r.labeller.data.yolo.label_repository import YoloLabelRepository
+    from labell3r.labeller.model.pose_image_model import PoseImageModel
 
     config = _dataset_config(names={0: "mouse"})
     schema = build_yolo_dataset_schema(tmp_path, config)
@@ -315,16 +315,16 @@ def test_selection_survives_repeated_image_state_recomputation(tmp_path):
     assert selected.instance_type.name == "mouse"
 
 
-def test_round_trips_a_real_junip3r_exported_dataset(tmp_path):
-    from junip3r.labeller.config.data import InstanceType, MemberType, SkeletonType
-    from junip3r.labeller.data.types.abc import LabellerObjectType
-    from junip3r.labeller.export.yolo.conversion.mapping_instance_converter import MappingYoloDatasetMetadataGenerator
-    from junip3r.labeller.export.yolo.data import YoloDataset, YoloDatasetConfig, YoloImage, YoloPoseInstanceTypeConfig
-    from junip3r.labeller.export.yolo.serialization.yolo_dataset_metadata_writer import YoloPoseDatasetMetadataWriter
-    from junip3r.labeller.export.yolo.serialization.yolo_dataset_writer import YoloDatasetWriter
-    from junip3r.labeller.yolo.config.yolo_dataset_config import resolve_yolo_data_yaml
-    from junip3r.labeller.yolo.data_yaml.serializer import YoloDataYamlSerializer
-    from junip3r.labeller.yolo.labels.data import YoloBoxInstance
+def test_round_trips_a_real_labell3r_exported_dataset(tmp_path):
+    from labell3r.labeller.config.data import InstanceType, MemberType, SkeletonType
+    from labell3r.labeller.data.types.abc import LabellerObjectType
+    from labell3r.labeller.export.yolo.conversion.mapping_instance_converter import MappingYoloDatasetMetadataGenerator
+    from labell3r.labeller.export.yolo.data import YoloDataset, YoloDatasetConfig, YoloImage, YoloPoseInstanceTypeConfig
+    from labell3r.labeller.export.yolo.serialization.yolo_dataset_metadata_writer import YoloPoseDatasetMetadataWriter
+    from labell3r.labeller.export.yolo.serialization.yolo_dataset_writer import YoloDatasetWriter
+    from labell3r.labeller.yolo.config.yolo_dataset_config import resolve_yolo_data_yaml
+    from labell3r.labeller.yolo.data_yaml.serializer import YoloDataYamlSerializer
+    from labell3r.labeller.yolo.labels.data import YoloBoxInstance
 
     config = YoloDatasetConfig(
         class_names=["mouse"],

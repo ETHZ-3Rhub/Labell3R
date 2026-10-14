@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from junip3r.common.discovery import discover_images, find_context_file, label_file_for
-from junip3r.labeller.data.discovery import discover_labeller_images
+from labell3r.common.discovery import discover_images, find_context_file, label_file_for
+from labell3r.labeller.data.discovery import discover_labeller_images
 
 
 def test_discover_images_filters_by_extension(tmp_path: Path):

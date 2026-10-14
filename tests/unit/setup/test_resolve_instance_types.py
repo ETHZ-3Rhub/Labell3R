@@ -1,6 +1,6 @@
-from junip3r.labeller.data.types.abc import LabellerObjectType
-from junip3r.setup.data.types.data import SetupInstanceType, SetupMember, SetupSkeleton
-from junip3r.setup.widgets.setup_window import resolve_instance_types
+from labell3r.labeller.data.types.abc import LabellerObjectType
+from labell3r.setup.data.types.data import SetupInstanceType, SetupMember, SetupSkeleton
+from labell3r.setup.widgets.setup_window import resolve_instance_types
 
 
 def _resolve(instance_types, mode="yolo_pose"):

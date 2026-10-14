@@ -1,4 +1,4 @@
-from junip3r.labeller.data.types.data import (
+from labell3r.labeller.data.types.data import (
     BoundingBox,
     Instance,
     Keypoint,

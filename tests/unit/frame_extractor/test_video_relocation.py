@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from junip3r.frame_extractor.data.types.data import Video
-from junip3r.frame_extractor.util.video_relocation import (
+from labell3r.frame_extractor.data.types.data import Video
+from labell3r.frame_extractor.util.video_relocation import (
     auto_remap_missing_videos,
     common_suffix_length,
     try_remap_path,

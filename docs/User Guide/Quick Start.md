@@ -1,12 +1,12 @@
 # Quick Start (Pose Estimation)
 
-The fastest path from installing Junip3R to labelled pose-estimation data. Junip3R also
+The fastest path from installing Labell3R to labelled pose-estimation data. Labell3R also
 supports object-detection-only and fully custom labelling - see
 [Project Setup](Project%20Setup.md) for those.
 
-## 1) Install and launch Junip3R
+## 1) Install and launch Labell3R
 
-Install Junip3R (portable ZIP or Python package), then start the app.
+Install Labell3R (portable ZIP or Python package), then start the app.
 
 - See: [Installation](Installation.md)
 

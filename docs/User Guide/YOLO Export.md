@@ -1,6 +1,6 @@
 # Exporting
 
-Junip3R can export project data as a YOLO training dataset.
+Labell3R can export project data as a YOLO training dataset.
 
 ## Open the export dialog
 

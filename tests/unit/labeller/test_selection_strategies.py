@@ -1,5 +1,5 @@
-from junip3r.labeller.model.instance_type_selection_strategy import EditorInstanceTypeWorkflow
-from junip3r.labeller.model.member_selection_strategy import EditorMemberSelectionStrategy
+from labell3r.labeller.model.instance_type_selection_strategy import EditorInstanceTypeWorkflow
+from labell3r.labeller.model.member_selection_strategy import EditorMemberSelectionStrategy
 
 
 class FakeInstanceType:

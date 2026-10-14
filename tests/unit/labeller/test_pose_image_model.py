@@ -1,11 +1,11 @@
 import numpy as np
 
-from junip3r.labeller.config.data import InstanceType, MemberType, SkeletonType
-from junip3r.labeller.data.types.abc import LabellerObjectType
-from junip3r.labeller.data.types.data import new_instance
-from junip3r.labeller.model.app_model import AppModel
-from junip3r.labeller.model.label_model import LabelModel
-from junip3r.labeller.model.pose_image_model import PoseImageModel
+from labell3r.labeller.config.data import InstanceType, MemberType, SkeletonType
+from labell3r.labeller.data.types.abc import LabellerObjectType
+from labell3r.labeller.data.types.data import new_instance
+from labell3r.labeller.model.app_model import AppModel
+from labell3r.labeller.model.label_model import LabelModel
+from labell3r.labeller.model.pose_image_model import PoseImageModel
 
 
 class FakeImageRepository:

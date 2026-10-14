@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Junip3R is a PySide6 (Qt) desktop GUI for labelling pose-estimation data: bounding boxes, keypoints,
+Labell3R is a PySide6 (Qt) desktop GUI for labelling pose-estimation data: bounding boxes, keypoints,
 polygons and polylines, with YOLO detect/pose export. It also extracts frames from video and manages
 project setup/config.
 
@@ -24,10 +24,10 @@ pytest tests/unit/test_logging_setup.py
 pytest tests/unit/test_logging_setup.py::TestClassName::test_name -v
 
 # Launch the app (start screen -> new project / open project)
-junip3r
+labell3r
 # or directly against a project config.yaml, skipping the start screen:
-junip3r_label
-junip3r_frame_extractor
+labell3r_label
+labell3r_frame_extractor
 
 # Build a standalone Windows executable (pyinstaller, --onedir)
 build_executable.bat
@@ -44,17 +44,17 @@ tests, but it is gitignored — it exists locally/CI-provisioned, not committed.
 
 ### Three sub-apps behind one shell
 
-`src/junip3r/main.py` defines `AppController`, which owns a single top-level `QMainWindow` at a time
+`src/labell3r/main.py` defines `AppController`, which owns a single top-level `QMainWindow` at a time
 and switches between three independent Qt applications, each with its own `from_config_file(...)`
 factory and `main()` standalone entry point:
 
-- `junip3r.setup` — project/skeleton configuration editor (`setup/main.py`)
-- `junip3r.frame_extractor` — video frame extraction and tagging (`frame_extractor/main.py`)
-- `junip3r.labeller` — the labelling editor itself (`labeller/main.py`)
+- `labell3r.setup` — project/skeleton configuration editor (`setup/main.py`)
+- `labell3r.frame_extractor` — video frame extraction and tagging (`frame_extractor/main.py`)
+- `labell3r.labeller` — the labelling editor itself (`labeller/main.py`)
 
 The sub-apps never talk to each other directly; they only emit Qt signals (`switch_to`, `closed`)
 that `AppController` listens to. All three can also run standalone via their own `main()` (each pops
-a file dialog to pick a project's `config.yaml`) — see the `junip3r_label` / `junip3r_frame_extractor`
+a file dialog to pick a project's `config.yaml`) — see the `labell3r_label` / `labell3r_frame_extractor`
 console-script entry points in `pyproject.toml`.
 
 A project on disk is a folder containing `config.yaml` plus `images/`, `context/` (optional video
@@ -117,7 +117,7 @@ code — verify against the actual `model/` files rather than trusting it outrig
 ### Logging
 
 `logging_setup.py`'s `LoggingManager` writes per-app-run key=value formatted logs (info + debug
-level, separate files) to `%LOCALAPPDATA%/ETH3RHub/Junip3R/logs` (or `~/.junip3r/logs`), namespaced
+level, separate files) to `%LOCALAPPDATA%/ETH3RHub/Labell3R/logs` (or `~/.labell3r/logs`), namespaced
 by process session and app name. Distinguishes `run_mode="standalone"` (sub-app launched directly)
 from `run_mode="integrated"` (launched from the shared `AppController` shell). Log with
 `extra={"event_category": ..., "event_name": ...}` to populate the structured `event` field.
@@ -125,5 +125,5 @@ from `run_mode="integrated"` (launched from the shared `AppController` shell). L
 ## Docs
 
 User-facing docs are an MkDocs (material theme) site under `docs/`, configured in `mkdocs.yml`
-(`site_url: https://ethz-3rhub.github.io/Junip3R`). `docs/index.md` links the User Guide pages and
+(`site_url: https://ethz-3rhub.github.io/Labell3R`). `docs/index.md` links the User Guide pages and
 example `config.yaml` files under `docs/Examples/`.

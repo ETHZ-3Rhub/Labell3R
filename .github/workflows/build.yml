@@ -58,73 +58,73 @@ jobs:
         run: |
           mkdir icon.iconset
           for size in 16 32 128 256 512; do
-            sips -z $size $size src/junip3r/res/junip3r_logo.png --out icon.iconset/icon_${size}x${size}.png
+            sips -z $size $size src/labell3r/res/labell3r_logo.png --out icon.iconset/icon_${size}x${size}.png
             double=$((size * 2))
-            sips -z $double $double src/junip3r/res/junip3r_logo.png --out icon.iconset/icon_${size}x${size}@2x.png
+            sips -z $double $double src/labell3r/res/labell3r_logo.png --out icon.iconset/icon_${size}x${size}@2x.png
           done
-          iconutil -c icns icon.iconset -o junip3r_logo.icns
+          iconutil -c icns icon.iconset -o labell3r_logo.icns
 
       - name: Build executable (Windows)
         if: runner.os == 'Windows'
         run: >
           pyinstaller
-          --add-data "src/junip3r/res/*;junip3r/res"
+          --add-data "src/labell3r/res/*;labell3r/res"
           --add-data "LICENSE;."
           --add-data "licenses/*;licenses"
           --onedir
-          --name "Junip3R"
-          --icon "src/junip3r/res/junip3r_logo.ico"
+          --name "Labell3R"
+          --icon "src/labell3r/res/labell3r_logo.ico"
           --noconsole
           --noconfirm
-          src/junip3r/main.py
+          src/labell3r/main.py
 
       - name: Build executable (macOS)
         if: runner.os == 'macOS'
         run: >
           pyinstaller
-          --add-data "src/junip3r/res/*:junip3r/res"
+          --add-data "src/labell3r/res/*:labell3r/res"
           --add-data "LICENSE:."
           --add-data "licenses/*:licenses"
           --onedir
-          --name "Junip3R"
-          --icon "junip3r_logo.icns"
+          --name "Labell3R"
+          --icon "labell3r_logo.icns"
           --noconsole
           --noconfirm
-          src/junip3r/main.py
+          src/labell3r/main.py
 
       - name: Build executable (Linux)
         if: runner.os == 'Linux'
         run: >
           pyinstaller
-          --add-data "src/junip3r/res/*:junip3r/res"
+          --add-data "src/labell3r/res/*:labell3r/res"
           --add-data "LICENSE:."
           --add-data "licenses/*:licenses"
           --onedir
-          --name "Junip3R"
+          --name "Labell3R"
           --noconsole
           --noconfirm
-          src/junip3r/main.py
+          src/labell3r/main.py
 
       - name: Zip build (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
-        run: Compress-Archive -Path dist/Junip3R -DestinationPath "Junip3R-$env:VERSION-$env:ASSET_NAME.zip"
+        run: Compress-Archive -Path dist/Labell3R -DestinationPath "Labell3R-$env:VERSION-$env:ASSET_NAME.zip"
         env:
           ASSET_NAME: ${{ matrix.asset-name }}
 
       - name: Zip build (macOS/Linux)
         if: runner.os != 'Windows'
         working-directory: dist
-        run: zip -r "../Junip3R-$VERSION-${{ matrix.asset-name }}.zip" Junip3R
+        run: zip -r "../Labell3R-$VERSION-${{ matrix.asset-name }}.zip" Labell3R
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Junip3R-${{ matrix.asset-name }}
-          path: Junip3R-*.zip
+          name: Labell3R-${{ matrix.asset-name }}
+          path: Labell3R-*.zip
 
       - name: Upload to release
         if: github.event_name == 'release'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload "${{ github.event.release.tag_name }}" Junip3R-*.zip --clobber
+        run: gh release upload "${{ github.event.release.tag_name }}" Labell3R-*.zip --clobber

@@ -2,9 +2,9 @@ from pathlib import Path
 
 import yaml
 
-from junip3r.common.config.abc import ConfigMode
-from junip3r.labeller.config.parser import parse_config
-from junip3r.labeller.data.types.abc import LabellerObjectType
+from labell3r.common.config.abc import ConfigMode
+from labell3r.labeller.config.parser import parse_config
+from labell3r.labeller.data.types.abc import LabellerObjectType
 
 EXAMPLES_DIR = Path(__file__).resolve().parents[3] / "docs" / "Examples"
 
@@ -39,7 +39,7 @@ def test_yolo_pose_bounding_box_and_keypoints_ordered_with_skeleton():
     assert mouse.skeleton.lines == [(nose.id, tail.id)]
 
 
-def test_junip3r_explicit_member_colors_are_preserved():
+def test_labell3r_explicit_member_colors_are_preserved():
     raw_config = {
         "mode": "freeform",
         "instance_types": [
@@ -117,7 +117,7 @@ def test_yolo_pose_automatic_bounding_box_still_resolves_an_instance_type_color(
     assert config.instance_types[0].color == (0, 0, 255)
 
 
-def test_junip3r_instance_type_color_is_parsed():
+def test_labell3r_instance_type_color_is_parsed():
     raw_config = {
         "mode": "freeform",
         "instance_types": [

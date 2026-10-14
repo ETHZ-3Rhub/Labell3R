@@ -2,11 +2,11 @@ from pathlib import Path
 
 import numpy as np
 
-from junip3r.labeller.config.data import InstanceType, MemberType, SkeletonType
-from junip3r.labeller.data.types.abc import LabellerObjectType
-from junip3r.labeller.data.types.data import BoundingBox, Instance
-from junip3r.labeller.export.yolo.data import ExportMode
-from junip3r.labeller.export.yolo.export_pipeline import (
+from labell3r.labeller.config.data import InstanceType, MemberType, SkeletonType
+from labell3r.labeller.data.types.abc import LabellerObjectType
+from labell3r.labeller.data.types.data import BoundingBox, Instance
+from labell3r.labeller.export.yolo.data import ExportMode
+from labell3r.labeller.export.yolo.export_pipeline import (
     TaggedImage,
     build_yolo_dataset,
     generate_export_mapping,
@@ -15,8 +15,8 @@ from junip3r.labeller.export.yolo.export_pipeline import (
     selected_instance_types,
     tagged_images,
 )
-from junip3r.labeller.export.yolo.export_profile import ExportProfile
-from junip3r.labeller.export.yolo.set_split import SetSplitConfig
+from labell3r.labeller.export.yolo.export_profile import ExportProfile
+from labell3r.labeller.export.yolo.set_split import SetSplitConfig
 
 
 class FakeInstanceType:

@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from junip3r.frame_extractor.data.types.data import Video
-from junip3r.frame_extractor.util.video_naming import deduplicate_video_names
+from labell3r.frame_extractor.data.types.data import Video
+from labell3r.frame_extractor.util.video_naming import deduplicate_video_names
 
 
 def test_unique_filenames_use_just_the_filename():

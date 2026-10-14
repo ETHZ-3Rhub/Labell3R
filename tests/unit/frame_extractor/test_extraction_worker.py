@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from junip3r.frame_extractor.data.types.data import Frame, Video
-from junip3r.frame_extractor.workers.extraction_worker import ExtractionJob, resolve_extraction_paths, run_extraction
+from labell3r.frame_extractor.data.types.data import Frame, Video
+from labell3r.frame_extractor.workers.extraction_worker import ExtractionJob, resolve_extraction_paths, run_extraction
 
 
 class FakeExtractionCache:

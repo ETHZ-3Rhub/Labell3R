@@ -1,7 +1,7 @@
-from junip3r.common.config.abc import ConfigMode
-from junip3r.common.config.data import Config, InstanceTypeConfig, MemberConfig, SkeletonConfig
-from junip3r.labeller.data.types.abc import LabellerObjectType
-from junip3r.setup.data.types.data import SetupConfig, SetupInstanceType, SetupMember, SetupSkeleton
+from labell3r.common.config.abc import ConfigMode
+from labell3r.common.config.data import Config, InstanceTypeConfig, MemberConfig, SkeletonConfig
+from labell3r.labeller.data.types.abc import LabellerObjectType
+from labell3r.setup.data.types.data import SetupConfig, SetupInstanceType, SetupMember, SetupSkeleton
 
 
 # --- SetupMember -----------------------------------------------------------------
@@ -135,7 +135,7 @@ def test_instance_type_with_color_is_an_immutable_update():
 
 # --- SetupInstanceType for FREEFORM: fully freeform, no bounding-box sniffing ----------
 
-def test_junip3r_from_config_leaves_a_bounding_box_member_in_place():
+def test_labell3r_from_config_leaves_a_bounding_box_member_in_place():
     # FREEFORM's UI never shows the manual/automatic toggle - a bounding-box-typed
     # member is just a regular member, wherever the user put it, name and all.
     config = InstanceTypeConfig(
@@ -154,7 +154,7 @@ def test_junip3r_from_config_leaves_a_bounding_box_member_in_place():
     ]
 
 
-def test_junip3r_to_config_passes_members_through_unchanged():
+def test_labell3r_to_config_passes_members_through_unchanged():
     instance_type = SetupInstanceType(
         name="mouse",
         members=[SetupMember(name="box", type=LabellerObjectType.BOUNDING_BOX), SetupMember(name="nose")],
@@ -169,7 +169,7 @@ def test_junip3r_to_config_passes_members_through_unchanged():
     assert config.color == (1, 2, 3)
 
 
-def test_junip3r_bounding_box_member_round_trips_its_own_skeleton_position():
+def test_labell3r_bounding_box_member_round_trips_its_own_skeleton_position():
     box = SetupMember(id="box", type=LabellerObjectType.BOUNDING_BOX)
     nose = SetupMember(id="nose")
     instance_type = SetupInstanceType(

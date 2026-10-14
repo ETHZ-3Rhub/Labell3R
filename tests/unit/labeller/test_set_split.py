@@ -2,7 +2,7 @@ import random
 
 import yaml
 
-from junip3r.labeller.export.yolo.set_split import (
+from labell3r.labeller.export.yolo.set_split import (
     SetSplit,
     SetSplitConfig,
     SetSplitConfigSerializer,

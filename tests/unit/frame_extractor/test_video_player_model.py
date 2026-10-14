@@ -3,8 +3,8 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from junip3r.frame_extractor.data.types.data import Video
-from junip3r.frame_extractor.model.video_player_model import VideoPlayerModel
+from labell3r.frame_extractor.data.types.data import Video
+from labell3r.frame_extractor.model.video_player_model import VideoPlayerModel
 
 
 def _write_video(path: Path, num_frames: int):

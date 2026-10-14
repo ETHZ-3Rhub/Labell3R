@@ -6,7 +6,7 @@ selection flows through QComboBox's own `currentIndexChanged`/`currentData()`, a
 owning dialog (not the widget) decides what "manage" means and how to format each
 item's display text (e.g. the "(used by N profiles)" annotation).
 
-Standalone script, no `junip3r` imports, in-memory fake data only. Run directly.
+Standalone script, no `labell3r` imports, in-memory fake data only. Run directly.
 """
 import sys
 from dataclasses import dataclass, field

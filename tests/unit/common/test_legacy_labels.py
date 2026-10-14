@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from junip3r.common.labels.legacy import InstanceType, LegacyLabelLoader
+from labell3r.common.labels.legacy import InstanceType, LegacyLabelLoader
 
 
 def _write_csv(path: Path, rows):

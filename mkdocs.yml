@@ -1,8 +1,8 @@
-site_name: Junip3R
+site_name: Labell3R
 site_description: Multi-source video and data recording for scientific research
-site_url: https://ethz-3rhub.github.io/Junip3R
-repo_url: https://github.com/ETHZ-3Rhub/Junip3R
-repo_name: ETHZ-3Rhub/Junip3R
+site_url: https://ethz-3rhub.github.io/Labell3R
+repo_url: https://github.com/ETHZ-3Rhub/Labell3R
+repo_name: ETHZ-3Rhub/Labell3R
 edit_uri: edit/master/docs/
 
 theme:

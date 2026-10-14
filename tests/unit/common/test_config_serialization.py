@@ -1,10 +1,10 @@
-from junip3r.common.config.abc import ConfigMode
-from junip3r.common.config.data import Config, InstanceTypeConfig, MemberConfig, SkeletonConfig
-from junip3r.common.config.serialization import ConfigSerializer
-from junip3r.labeller.data.types.abc import LabellerObjectType
+from labell3r.common.config.abc import ConfigMode
+from labell3r.common.config.data import Config, InstanceTypeConfig, MemberConfig, SkeletonConfig
+from labell3r.common.config.serialization import ConfigSerializer
+from labell3r.labeller.data.types.abc import LabellerObjectType
 
 
-def test_serialize_junip3r_round_trips_through_deserialize():
+def test_serialize_labell3r_round_trips_through_deserialize():
     nose = MemberConfig(id="nose", type=LabellerObjectType.KEYPOINT, name="nose", color=(255, 0, 0))
     tail = MemberConfig(id="tail", type=LabellerObjectType.KEYPOINT, name="tail", color=(0, 255, 0))
     config = Config(
@@ -98,7 +98,7 @@ def test_yolo_pose_color_round_trips_through_deserialize_for_both_bounding_box_m
         assert round_tripped.instance_types[0].bounding_box == bounding_box
 
 
-def test_serialize_junip3r_includes_color_when_set():
+def test_serialize_labell3r_includes_color_when_set():
     config = Config(
         mode=ConfigMode.FREEFORM,
         instance_types=[InstanceTypeConfig(name="mouse", color=(0, 255, 0))],

@@ -3,8 +3,8 @@ from typing import Callable, List, Set
 
 import pytest
 
-from junip3r.frame_extractor.data.types.data import Video
-from junip3r.frame_extractor.workers.selection_worker import SelectionJob, run_selection
+from labell3r.frame_extractor.data.types.data import Video
+from labell3r.frame_extractor.workers.selection_worker import SelectionJob, run_selection
 
 
 class FakeStrategy:

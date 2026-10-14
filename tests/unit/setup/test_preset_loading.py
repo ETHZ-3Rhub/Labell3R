@@ -1,7 +1,7 @@
 import pytest
 import yaml
 
-from junip3r.setup.widgets.new_project_window import load_preset, load_project_as_preset, load_saved_preset
+from labell3r.setup.widgets.new_project_window import load_preset, load_project_as_preset, load_saved_preset
 
 
 def _write_config(path, mode="freeform"):

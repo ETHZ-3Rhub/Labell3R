@@ -1,16 +1,16 @@
 import pytest
 
-from junip3r.labeller.config.data import InstanceType, MemberType, SkeletonType
-from junip3r.labeller.data.types.abc import LabellerObjectType
-from junip3r.labeller.data.types.data import BoundingBox, Instance, Keypoint
-from junip3r.labeller.export.yolo.conversion.mapping_instance_converter import (
+from labell3r.labeller.config.data import InstanceType, MemberType, SkeletonType
+from labell3r.labeller.data.types.abc import LabellerObjectType
+from labell3r.labeller.data.types.data import BoundingBox, Instance, Keypoint
+from labell3r.labeller.export.yolo.conversion.mapping_instance_converter import (
     MappingYoloDatasetGenerator,
     MappingYoloDatasetMetadataGenerator,
     MappingYoloPoseInstanceConverter,
     build_instance_type_mapping,
     _box_to_xywh,
 )
-from junip3r.labeller.export.yolo.data import ExportMode, YoloDatasetConfig, YoloPoseInstanceTypeConfig
+from labell3r.labeller.export.yolo.data import ExportMode, YoloDatasetConfig, YoloPoseInstanceTypeConfig
 
 
 class FakeInstanceType:
